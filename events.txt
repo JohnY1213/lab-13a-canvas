@@ -1,0 +1,1 @@
+My major is game design, so I want to design my website as a game theme. To introduce some knowledge about the game, I want to use click events and animation to make a small game.

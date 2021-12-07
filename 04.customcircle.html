@@ -1,0 +1,103 @@
+<!-- https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#10.0 
+https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#16.0
+	—Each shape you create draws on top of all of your previous drawwings. 
+	—In this case, the green circle is drawn over the black square:
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+	<!-- https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#5.0
+		We’ll have to let the page know that it should start drawing once the entire page is loaded. 
+			—we do this by adding an onload event handler to the body tag... 
+			—that calls a function called draw() that we’ll define later
+			—note that there are better ways to do this, but we’ll go with this technique for now. 
+	-->
+
+	<canvas id="sketch" width="1000" height="1000">
+		<!-- https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#6.0 
+			Let’s add a place to draw!. Use a pair of opening and closing tags called canvas… with attributes, id, width, and height.
+			—id will be used later in order to reference this particular canvas
+			—width and height are the dimensions of your drawing area
+			—place this tag before your JavaScript (for now… we’ll see a more correct way of doing it later)
+			—make sure to add an id attribute!
+		-->
+
+	</canvas>
+
+	<script>
+		function draw() {
+		 	var sketch = document.getElementById('sketch');
+			var context = sketch.getContext("2d");
+				// https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#9.0
+				// In order to draw on your canvas, you have to:
+				//	1. retrieve the canvas element from your page using the id
+				//	2. get the context from your canvas element (which is what we’ll be using to draw)		
+			
+			// DRAW STUFF HERE!
+            context.fillStyle = "#D8C011";
+            // FILL SHAPES WITH COLORS:
+            // https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#15.0
+            // context.fillStyle = "#00ff00" 
+            // "#ff0000" - RED
+            // "#00ff00" - GREEN
+            // "#0000ff" - BLUE
+            // "#000000" - BLACK
+
+            // find more HEX color codes: 
+            // https://color.adobe.com/create
+            // or: https://htmlcolorcodes.com/
+
+           
+			// CIRCLE: https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#13.0
+				// context.beginPath();
+				// context.arc(x, y, radius, start angle, end angle, clockwise);
+				// context.closePath();
+				// context.fill();
+			// RECTANGLE: https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#12.0
+        		// context.fillRect(x, y, width, height);
+			
+		
+				 
+                
+
+			var number = prompt("how much circle you want?");
+            parseInt(number, 10);
+			var color = prompt("what color you like?red/blue/yellow");
+			var radius = prompt("Enter a radius of the circle");
+			parseInt(radius, 10);
+        	
+			for (var i = 1; i <= number; i++) {
+				if (color == "red") {
+                    context.fillStyle = "#FF0000";
+                    context.beginPath();
+                    context.arc(3*radius*i, 50, radius, 0, 2 * Math.PI, true);
+                    context.closePath();
+                    context.fill();
+				}
+				if (color == "blue") {
+                    context.fillStyle = "#0000FF";
+                    context.beginPath();
+                    context.arc(3 * radius * i, 50, radius, 0, 2 * Math.PI, true);
+                    context.closePath();
+                    context.fill();
+				}
+				if (color == "yellow") {
+                    context.fillStyle = "#FFFF00";
+                    context.beginPath();
+                    context.arc(3 * radius * i, 50, radius, 0, 2 * Math.PI, true);
+                    context.closePath();
+                    context.fill();
+
+                }
+            }
+
+			
+		}
+
+	</script>
+
+</body>
+</html>
